@@ -1,4 +1,8 @@
 function [s,Ori_s,Unmix_s,SetupStruc] = readData(Angle,SetupStruc,channel)
+%%
+% s - data_size * channel 这个是每一个mic的输出声音, 且所有声源的信号合成一个信号，次信号可以增加噪声
+% Ori_s - data_size * Num 这个是1channel接收到的两个方向的原始信号
+% Unmix_s - 这个和s类似，但是不会对所有声源进行合并
 Num = length(Angle);
 SetupStruc.Angle = Angle;
 T60 = SetupStruc.T60;
